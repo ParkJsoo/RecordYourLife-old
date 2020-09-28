@@ -40,7 +40,7 @@ export default {
 <style>
     .top_nav {
         height: auto;
-        margin-bottom: 50px;
+        margin-bottom: 100px;
         display: flex;
         justify-content: space-around;
         background: linear-gradient(to right, #3F5EFB 0%, #FC466B 100%);

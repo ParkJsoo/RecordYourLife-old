@@ -5,32 +5,35 @@
 			<table class="board_table" id='board_list'>
 				<thead>
 					<tr>
-						<th class="text-center d-none d-md-table-cell">number</th>
+						<th>number</th>
 						<th class="w-50">title</th>
-						<th class="text-center d-none d-md-table-cell">date</th>
-						<th class="text-center d-none d-md-table-cell">edit</th>
-						<th v-show="showDel" class="text-center d-none d-md-table-cell">delete</th>
+						<th>date</th>
+						<th class="w-50">name</th>
+						<th>edit</th>
+						<th v-show="showDel">delete</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr>
-						<td class="text-center d-none d-md-table-cell">10</td>
+						<td>10</td>
 						<td>글 제목 입니다</td>
-						<td class="text-center d-none d-md-table-cell">2020-09-23</td>
+						<td>2020-09-23</td>
+						<td class="user_name">홍길동</td>
 						<td><button type="button" class="editBtn">수정</button></td>
 						<td v-show="showDel"><input type="checkbox"></td>
 					</tr>
 					<tr>
-						<td class="text-center d-none d-md-table-cell">10</td>
+						<td>10</td>
 						<td>글 제목 입니다</td>
-						<td class="text-center d-none d-md-table-cell">2020-09-23</td>
+						<td>2020-09-23</td>
+						<td class="user_name">홍길동</td>
 						<td><button type="button" class="editBtn">수정</button></td>
 						<td v-show="showDel"><input type="checkbox"></td>
 					</tr>
 				</tbody>
 			</table>
 			<div class="board_bottom">
-				<div class="d-none d-md-block">
+				<div class="board_bottom_page">
 					<ul class="board_paging">
 						<li class="page-item">
 							<router-link to="/" class="page-link">이전</router-link>
@@ -72,7 +75,8 @@
 				</div>
 				<div class="board_button">
 					<button type="button" class="boardBtn btn btn-primary">글쓰기</button>
-					<button type="button" class="boardBtn" @click="showDelOnOff">삭제</button>
+					<button type="button" class="boardBtn" @click="showDelOn">삭제</button>
+					<button type="button" class="boardBtn" @click="showDelOff" v-show="showDel">취소</button>
 				</div>
 			</div>
 		</div>
@@ -87,8 +91,11 @@ export default {
 		}
 	},
 	methods: {
-		showDelOnOff: function() {
-			this.showDel = !this.showDel
+		showDelOn: function() {
+			this.showDel = true
+		},
+		showDelOff: function() {
+			this.showDel = false
 		}
 	}
 }
@@ -98,6 +105,7 @@ export default {
 	.diary_board {
 		width: 80%;
 		margin: 0 auto;
+		margin-bottom: 100px;
 		padding: 50px;
 		box-sizing: border-box;
 		border: 1.5px solid lightgray;

@@ -19,14 +19,14 @@
             <div class="login_box_container">
                 <div class="login_box_title">Log in</div>
                 <div class="login_info">
-                    <span>ID</span><input id="user_id" v-model="user_id" type="text" placeholder="user id">
+                    <label for="user_id">ID</label><input id="user_id" v-model="user_id" type="text" placeholder="user id">
                 </div>
                 <div class="login_info">
-                    <span>PW</span><input id="user_pw" v-model="user_pw" type="password" placeholder="user password">
+                    <label for="user_pw">PW</label><input id="user_pw" v-model="user_pw" type="password" placeholder="user password">
                 </div>
                 <div class="login_box_button">
                     <button type="button" @click="check_input">sign in</button>
-                    <button type="button">sign up</button>
+                    <button type="button" @click="join">sign up</button>
                 </div>
                 <router-link to="/" class="find_user_info" href="/">Forgot your id/pw?</router-link>
             </div>
@@ -60,6 +60,9 @@ export default {
             alert('로그인 되었습니다')
             this.$router.push('/main-page')
             this.$emit('login');
+        },
+        join : function() {
+            this.$router.push('/user-join')
         }
     }
 }
@@ -130,7 +133,7 @@ export default {
         border-radius: 5px;
     }
 
-    .login_info span {
+    .login_info label {
         font-weight: 600;
         vertical-align: middle;
     }
@@ -191,7 +194,7 @@ export default {
             font-size: 2rem;
         }
 
-        .login_info span {
+        .login_info label {
             font-size: 1.3rem;
             margin-right: 10px;
         }
@@ -239,7 +242,7 @@ export default {
             font-size: 2rem;
         }
 
-        .login_info span {
+        .login_info label {
             font-size: 1.3rem;
             margin-right: 10px;
         }
