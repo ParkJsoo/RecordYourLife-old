@@ -48,7 +48,7 @@
             </div>
             <div class="new-submit">
                 <div class="submit-button">
-                    <button type="button" id="upload">upload</button>
+                    <button type="button" id="upload" @click="goPost">upload</button>
                     <button type="button" id="reset">reset</button>
                 </div>
             </div>
@@ -130,8 +130,11 @@ export default {
         },
         allClear() {
             this.files = ''
-        }
-}
+        },
+        goPost: function() {
+            this.$router.push('/diary-post')
+		},
+    }
 }
 </script>
 
@@ -241,5 +244,6 @@ export default {
         height: 150px;
         border: 1px solid gray;
         border-radius: 5px;
+        resize: vertical;
     }
 </style>
