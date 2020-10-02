@@ -244,6 +244,6 @@ export default {
         height: 150px;
         border: 1px solid gray;
         border-radius: 5px;
-        resize: vertical;
+        resize: none;
     }
 </style>

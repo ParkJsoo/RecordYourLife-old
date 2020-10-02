@@ -9,9 +9,9 @@
         </div>
         <div class="nav_container">
             <ul class="nav_title">STUDY
-                <li class="nav_sub">NEW</li>
+                <router-link to="study-new" class="nav_sub">NEW</router-link>
                 <li class="nav_sub">CALENDAR</li>
-                <li class="nav_sub">LIST</li>
+                <router-link to="study-list" class="nav_sub">LIST</router-link>
             </ul>
         </div>
         <div class="nav_container">
